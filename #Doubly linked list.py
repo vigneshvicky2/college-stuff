@@ -30,6 +30,24 @@ class doublyll:
                 n=n.ref
             while n is not None:
                 print(n.data,"-->",end=" ")
-                n.pref                   
+                n.pref 
+    #adding element in begining of the linked list           
+    def add_begin(self,data):
+        new_node=node(data)
+        new_node.nref=self.head
+        self.head=new_node
+    #addind element at the end of the linked list   
+    def add_end(self,data):
+        new_node=node(data)
+        if self.head==None:
+            self.head=new_node
+        else:
+            n=self.head
+            while n.nref != None:
+                n=n.nref
+            n.nref=new_node    
 dll=doublyll()      
-dll.print__ll1()         
+dll.add_begin(10)
+dll.add_begin(5)   
+dll.add_end(15)      
+dll.print__ll1()
